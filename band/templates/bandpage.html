@@ -1,0 +1,167 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Band Website - Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+    
+
+        <style>
+        .nav {
+            background-color: #161616;
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+        }
+
+        .nav a {
+            color: white;
+            margin-right: 10px;
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: #111010;
+        }
+
+        </style>
+    </head>
+    <body>
+        <div class="container"> 
+            <header class="header text-center">
+                <h1>Welcome to The Band Group Website!</h1>
+                <p class="lead">Experience the magic of our music.</p>
+            </header>
+        </div>
+
+        <nav class="nav">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+            {% if user.is_authenticated %}
+                <a class="nav-link" href="{% url 'concert_list' %}">Upcoming Concerts</a>
+                <a class="nav-link" href="{% url 'exclusive_content' %}">Exclusive Content</a>
+                <a class="nav-link" href="{% url 'song' %}">Songs List</a>
+                <a class="nav-link" href="{% url 'album' %}">Album List</a>
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            {% endif %}
+            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+            
+            <a class="nav-link" href="#" id="dark-mode-toggle">
+                <i class="fas fa-moon"></i>
+            </a>
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="bandpic-container">
+                    <img src="{% static 'images/bandpic.jpg' %}" alt="Band Image" class="img-fluid bandpic">
+                </div>
+            </div>
+            <div class="row">
+                <h2>About Us</h2>
+                <p>
+                    Band is a dynamic and talented group of musicians who have captivated audiences worldwide with their extraordinary performances. Combining elements of rock, pop, and soul, our music takes listeners on a journey of emotions and melodies.
+                </p>
+                <p>
+                    With our unique sound and energetic stage presence, we have become renowned for delivering unforgettable live shows. Our passion for music drives us to create powerful songs that resonate with people from all walks of life.
+                </p>
+                <p>
+                    Join us on our musical adventure and let the rhythm move your soul!
+                </p>
+        
+                <h2>Band Members</h2>
+                <!-- Enclose the list of band members in a <ul> element -->
+                <ul>
+                    <li>
+                        <h4>Raysun</h4>
+                        <div class="bandpic-container">
+                            <img src="{% static 'images/raysun.jpg' %}" alt="Raysun" class="img-fluid band-member-image">
+                        </div>
+                        <p>Instrument: Guitar</p>
+                        <p>
+                            Description: Raysun is the heart and soul of our band. With his incredible guitar skills, he creates electrifying solos that resonate deep within the audience. His passionate performances and melodic riffs leave a lasting impact on everyone who listens.
+                        </p>
+                    </li>
+                    <li>
+                        <h4>Noela</h4>
+                        <div class="bandpic-container">
+                            <img src="{% static 'images/noela.jpg' %}" alt="Noela" class="img-fluid band-member-image">
+                        </div>
+                        <p>Instrument: Piano</p>
+                        <p>
+                            Description: Noela is the master of keys, bringing enchanting melodies to life through her mesmerizing piano playing. Her delicate touch and soulful compositions add depth and emotion to our music, creating a harmonious blend of sound that touches the hearts of our listeners.
+                        </p>    
+                    </li>
+                    <li>
+                        <h4>Patrick</h4>
+                        <div class="bandpic-container">
+                            <img src="{% static 'images/patrick.jpg' %}" alt="Patrick" class="img-fluid band-member-image">
+                        </div>
+                        <p>Instrument:Trumpet</p>
+                        <p>
+                            Description: Patrick's trumpet skills are like no other. His vibrant and soul-stirring melodies transport us to new heights of musical ecstasy. With each note, he injects a burst of energy and passion into our performances, making every song come alive with his incredible talent.
+                        </p>
+                    </li>
+                    <li>
+                        <h4>Landry</h4>
+                        <div class="bandpic-container">
+                            <img src="{% static 'images/landry.jpg' %}" alt="Landry" class="img-fluid band-member-image">
+                        </div>
+                        <p>Instrument: Drum</p>
+                        <p>
+                            Description: Landry is the heartbeat of our band. With his rhythmic prowess and thunderous beats, he sets the pulse for our music. His powerful drumming not only drives the songs forward but also adds an intense and dynamic element that fuels the energy of our live performances.
+                        </p>
+                    </li>
+                </ul>
+            
+                <h2>Most popular Songs</h2>
+                <!-- Enclose the list of songs in a <ul> element -->
+                <ul>
+                    <li>
+                        <h4>The Sun Melody</h4>
+                        <p>
+                            Artist: Raysun</p>
+                        <p>
+                            "The Sun Melody" is a mesmerizing instrumental composition that takes you on a sonic journey through radiant landscapes. Raysun's intricate guitar work weaves a tapestry of warmth and optimism, painting a musical portrait of the sun's radiant energy.
+                        </p>
+                    </li>
+                    <li>
+                        <h4>La vie</h4>
+                        <p>
+                            Artist: Noela</p>
+                        <p>
+                            "La vie" is a soulful and introspective piano ballad that reflects on the beauty and complexities of life. Noela's delicate keystrokes and emotive playing evoke a range of emotions, inviting listeners to contemplate their own personal journey through the melodies of existence.
+                        </p>
+                    </li>
+                    <li>
+                        <h4>Love Never Fails</h4>
+                        <p>
+                            Artist: Landry</p>
+                        <p>
+                            "Love Never Fails" is a powerful anthem of love and resilience. Landry's driving drum beats create a strong foundation, while the lyrics and melodies inspire hope and remind us that love is the guiding force that transcends all challenges. It's a testament to the enduring power of love.
+                        </p>
+                    </li>
+                </ul>
+            
+                <h2>Our Music</h2>
+                <p>
+                    Immerse yourself in our captivating melodies and powerful lyrics. Each song we create is a reflection of our passion and dedication to the craft. Learn about the band's upcoming concerts and check our exclusive content.
+                </p>
+            
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+        <script src="{% static 'scripts.js' %}"></script>
+    </body>
+</html>
+
