@@ -15,6 +15,7 @@ def home(request):
     Returns:
         HttpResponse: A response containing the rendered 'home.html' template.
     """
+
     return render(request, 'home.html')
 
 def contact(request):

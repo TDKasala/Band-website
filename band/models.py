@@ -53,24 +53,70 @@ class Concert_list(models.Model):
 
     
 class Login(models.Model):
+    
+    """
+    Represents a user login information.
+
+    Attributes:
+        username (CharField): The username of the user.
+        password (CharField): The password associated with the user's account.
+
+    Methods:
+        __str__(): Returns the string representation of the user by their username.
+    """
     username = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
     
     def __str__(self):
+        
+        """
+        Returns the string representation of the user by their username.
+        """
         return self.username
     
 class Contact(models.Model):
+    
+    """
+    Represents a contact form submission.
+
+    Attributes:
+        name (CharField): The name of the person submitting the form.
+        email (CharField): The email address of the person submitting the form.
+        message (TextField): The message or content of the form submission.
+
+    Methods:
+        __str__(): Returns the string representation of the contact by their name.
+    """
+
     name = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
     message = models.TextField()
     
     def __str__(self):
+        """
+        Returns the string representation of the contact by their name.
+        """
         return self.name
 
 
 class ExclusiveContent(models.Model):
+    
+    """
+    Represents exclusive content.
+
+    Attributes:
+        title (CharField): The title of the exclusive content.
+        description (TextField): A description of the exclusive content.
+
+    Methods:
+        __str__(): Returns the string representation of the exclusive content by its title.
+    """
     title = models.CharField(max_length=100)
     description = models.TextField()
 
     def __str__(self):
+        """
+        Returns the string representation of the exclusive content by its title.
+        """
+
         return self.title
