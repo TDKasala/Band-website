@@ -17,8 +17,8 @@ release = '00.00.01'
 import os
 import sys
 import django
-sys.path.inseert(0, os.path.abspath('..'))
-os.environ['DJANGO_SETTINGS_MODULE'] = 'band'
+sys.path.insert(0, os.path.abspath('C:/Users/denis/OneDrive/Desktop/band_website'))
+os.environ['DJANGO_SETTINGS_MODULE'] = 'band_website.settings'
 django.setup()
 
 extensions = ['sphinx.ext.autodoc',
