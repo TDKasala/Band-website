@@ -15,13 +15,13 @@ This is a Django-based web application for a band's website. It includes feature
 1. Clone the repository:
 
    ```shell
-   git clone https://github.com/TDKasala/Band_website.git
+   git clone https://github.com/TDKasala/Band-website.git
    ```
 
 2. Navigate to the project directory:
 
    ```shell
-   cd Band_website
+   cd Band-website
    ```
 
 3. Create a virtual environment (optional but recommended):
