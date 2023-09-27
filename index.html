@@ -43,13 +43,11 @@
         <nav class="nav">
             <a class="nav-link" href="{% url 'about' %}">About</a>
             <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-            {% if user.is_authenticated %}
-                <a class="nav-link" href="{% url 'concert_list' %}">Upcoming Concerts</a>
-                <a class="nav-link" href="{% url 'exclusive_content' %}">Exclusive Content</a>
-                <a class="nav-link" href="{% url 'song' %}">Songs List</a>
-                <a class="nav-link" href="{% url 'album' %}">Album List</a>
-                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-            {% endif %}
+            <a class="nav-link" href="{% url 'concert_list' %}">Upcoming Concerts</a>
+            <a class="nav-link" href="{% url 'exclusive_content' %}">Exclusive Content</a>
+            <a class="nav-link" href="{% url 'song' %}">Songs List</a>
+            <a class="nav-link" href="{% url 'album' %}">Album List</a>
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
             <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
             <a class="nav-link" href="{% url 'login' %}">Login</a>
             
